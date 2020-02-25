@@ -1,0 +1,15 @@
+service: questions-1on1
+
+provider:
+  name: aws
+  runtime: python3.8
+
+
+functions:
+  1on1_question:
+    handler: generate_question.run
+    events:
+    - http:
+        path: gen
+        method: get
+  
